@@ -24,7 +24,10 @@ const IndexPage = () => (
       JAMStack related question is fair game, be it beginner, intermediate, or
       advanced. We don’t have all the answers, but we can find them as a team.
     </p>
-    <Link to={`/feature-requests`}>Feature Requests</Link>
+    <p>
+      <Link to={`/feature-requests`}>Feature Requests</Link> or{" "}
+      <Link to="/slack">Join Our Slack</Link>
+    </p>
     <ImageContainer>
       <Image />
     </ImageContainer>

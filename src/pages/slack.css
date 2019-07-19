@@ -1,0 +1,37 @@
+#slack-form {
+  display: flex;
+  background-color: #eee;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border-radius: .5rem;
+}
+
+#slack-form form {
+  margin-bottom: 0;
+}
+
+#slack-form input[type=email] {
+  width: 320px;
+  border: 1px solid #999;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  background-color: #fff;
+  background-clip: padding-box;
+}
+
+#slack-form button {
+  display: flex;
+  margin: 1rem auto;
+  background-color: rebeccapurple;
+  color: #fff;
+  padding: .375rem .75rem;
+  border-color: rebeccapurple;
+  border-radius: .25rem;
+}
+
+#slack-form button:hover {
+  cursor: pointer;
+}
