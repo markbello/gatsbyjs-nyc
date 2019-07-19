@@ -1,3 +1,4 @@
+/* slack-form */
 #slack-form {
   display: flex;
   background-color: #eee;
@@ -34,4 +35,15 @@
 
 #slack-form button:hover {
   cursor: pointer;
+}
+
+/* toast */
+#toast {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
