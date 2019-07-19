@@ -7,16 +7,27 @@ import SEO from "../components/seo"
 export default function Slack() {
   // HELPERS
   const [email, setEmail] = useState("")
+  const [submitToast, setSubmitToast] = useState(false)
 
   const requestInvite = () => {
+    setSubmitToast(true)
     // setTimeout for form to process before resetting state
     setTimeout(() => setEmail(""), 1000)
+  }
+
+  const displayToast = () => {
+    return (
+      <div id="toast" onClick={() => setSubmitToast(false)}>
+        Invite sent!
+      </div>
+    )
   }
   // end HELPERS
 
   return (
     <Layout>
       <SEO title="Gatsby NYC's Slack Community" />
+      {submitToast ? displayToast() : null}
       <div id="slack-form">
         <h1 style={{ textAlign: "center" }}>Gatsby NYC's Slack Community</h1>
         <p>
