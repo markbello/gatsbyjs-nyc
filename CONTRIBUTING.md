@@ -25,6 +25,9 @@ We value clean coding, and make efforts to enforce good practices throughout our
 Please try to give and receive constructive feedback to this end. We will make efforts to document
 and share our heuristics for clean coding.
 
+A [general reference] (https://github.com/ryanmcdermott/clean-code-javascript) is available based on
+"Clean Coding" by Robert Martin, with examples adapted to Javascript.
+
 ## Code of Conduct
 
 ### Our Pledge
