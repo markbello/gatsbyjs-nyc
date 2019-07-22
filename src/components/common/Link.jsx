@@ -9,6 +9,7 @@ const StyledLink = styled(Link)`
 
 StyledLink.propTypes = {
   theme: PropTypes.object, // from ThemeProvider
+  to: PropTypes.string.isRequired,
 }
 
 export default StyledLink
