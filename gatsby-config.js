@@ -3,6 +3,23 @@ module.exports = {
     title: `Gatsby NYC Meetup`,
     description: `Our community is a welcoming space where any Gatsby, React, Javascript, JAMStack related question is fair game, be it beginner, intermediate, or advanced. We don’t have all the answers, but we can find them as a team.`,
     author: `Gatsby NYC Meetup`,
+    navbarLinks: [
+      {
+        id: 1,
+        name: `Gatsby NYC`,
+        link: `/`
+      },
+      {
+        id: 2,
+        name: `Feature Requests`,
+        link: `/feature-requests`
+      },
+      {
+        id: 3,
+        name: `Join Our Slack`,
+        link: `/slack`
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
