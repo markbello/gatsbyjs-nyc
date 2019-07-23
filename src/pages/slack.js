@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Layout from "../layout"
-import "./slack.css"
+import styled from "styled-components"
 
 import SEO from "../components/seo"
 
@@ -13,15 +13,61 @@ export default function Slack() {
     setTimeout(() => setEmail(""), 1000)
   }
 
+  const SlackFormContainer = styled.section`
+    display: flex;
+    background-color: #eee;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  `
+
+  const EmailInput = styled.input`
+    width: 320px;
+    border: 1px solid #999;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    background-clip: padding-box;
+
+    @media only screen and (max-width: 320px) {
+      width: 240px;
+    }
+  `
+
+  const Button = styled.button`
+    display: flex;
+    margin: 1rem auto 0;
+    background-color: rebeccapurple;
+    color: #fff;
+    padding: 0.375rem 0.75rem;
+    border-color: rebeccapurple;
+    border-radius: 0.25rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  `
+
+  const Toast = styled.div`
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  `
+
   return (
     <Layout>
       <SEO title="Gatsby NYC's Slack Community" />
       {submitToast && (
-        <div id="toast" onClick={() => setSubmitToast(false)}>
-          Invite sent!
-        </div>
+        <Toast onClick={() => setSubmitToast(false)}>Invite sent!</Toast>
       )}
-      <div id="slack-form">
+      <SlackFormContainer>
         <h1 style={{ textAlign: "center" }}>Gatsby NYC's Slack Community</h1>
         <p>
           Our community is a welcoming space where any Gatsby, React,
@@ -34,8 +80,9 @@ export default function Slack() {
           method="post"
           target="_blank"
           onSubmit={requestInvite}
+          style={{ marginBottom: 0 }}
         >
-          <input
+          <EmailInput
             aria-label="Enter your email to be invited to Gatsy NYC's Slack channel."
             required
             autoComplete="email"
@@ -45,11 +92,11 @@ export default function Slack() {
             value={email}
             onChange={({ target: { value } }) => setEmail(value)}
           />
-          <button aria-label="Submit your email." type="submit">
+          <Button aria-label="Submit your email." type="submit">
             Invite Me!
-          </button>
+          </Button>
         </form>
-      </div>
+      </SlackFormContainer>
     </Layout>
   )
 }
