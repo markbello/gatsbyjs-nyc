@@ -3,6 +3,50 @@ import Layout from "../layout"
 import styled from "styled-components"
 
 import SEO from "../components/seo"
+import Button from "../components/Button"
+
+const SlackFormContainer = styled.div`
+  display: flex;
+  background-color: #eee;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 0;
+  }
+`
+
+const EmailInput = styled.input`
+  width: 320px;
+  border: 1px solid #999;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  margin-bottom: 1rem;
+
+  @media only screen and (max-width: 320px) {
+    width: 240px;
+  }
+`
+
+const Toast = styled.div`
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
+`
 
 export default function Slack() {
   const [email, setEmail] = useState("")
@@ -13,54 +57,7 @@ export default function Slack() {
     setTimeout(() => setEmail(""), 1000)
   }
 
-  const SlackFormContainer = styled.section`
-    display: flex;
-    background-color: #eee;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    padding: 2rem;
-    border-radius: 0.5rem;
-  `
-
-  const EmailInput = styled.input`
-    width: 320px;
-    border: 1px solid #999;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.25rem;
-    background-color: #fff;
-    background-clip: padding-box;
-
-    @media only screen and (max-width: 320px) {
-      width: 240px;
-    }
-  `
-
-  const Button = styled.button`
-    display: flex;
-    margin: 1rem auto 0;
-    background-color: rebeccapurple;
-    color: #fff;
-    padding: 0.375rem 0.75rem;
-    border-color: rebeccapurple;
-    border-radius: 0.25rem;
-
-    &:hover {
-      cursor: pointer;
-    }
-  `
-
-  const Toast = styled.div`
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  `
-
+  console.log(email)
   return (
     <Layout>
       <SEO title="Gatsby NYC's Slack Community" />
@@ -68,7 +65,7 @@ export default function Slack() {
         <Toast onClick={() => setSubmitToast(false)}>Invite sent!</Toast>
       )}
       <SlackFormContainer>
-        <h1 style={{ textAlign: "center" }}>Gatsby NYC's Slack Community</h1>
+        <h1>Gatsby NYC's Slack Community</h1>
         <p>
           Our community is a welcoming space where any Gatsby, React,
           Javascript, JAMStack related question is fair game, be it beginner,
@@ -80,7 +77,6 @@ export default function Slack() {
           method="post"
           target="_blank"
           onSubmit={requestInvite}
-          style={{ marginBottom: 0 }}
         >
           <EmailInput
             aria-label="Enter your email to be invited to Gatsy NYC's Slack channel."

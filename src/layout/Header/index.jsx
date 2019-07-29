@@ -5,6 +5,8 @@ import HeaderContainer from "./HeaderContainer"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 
+import Button from "../../components/Button"
+
 const NavContainer = styled.div`
   display: flex;
   align-items: center;
@@ -15,25 +17,14 @@ const LogoContainer = styled.div`
   width: 120px;
 `
 
-const MenuItemContainer = styled.div`
+const NavbarItemContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 `
 
-const MenuItems = styled.div`
+const NavbarItems = styled.div`
   margin: auto 1rem;
-`
-
-const SlackButton = styled.button`
-  background-color: rebeccapurple;
-  color: #fff;
-  border-radius: 0.25rem;
-  padding: 0.375rem 0.75rem;
-
-  &:hover {
-    cursor: pointer;
-  }
 `
 
 const Header = () => (
@@ -44,13 +35,14 @@ const Header = () => (
           <GatsbyLogo />
         </LogoContainer>
       </Link>
-      <MenuItemContainer>
+      <NavbarItemContainer>
         <StaticQuery
           query={graphql`
             query SiteTitleQuery {
               site {
                 siteMetadata {
-                  menuLinks {
+                  navbarLinks {
+                    id
                     name
                     link
                   }
@@ -59,27 +51,32 @@ const Header = () => (
             }
           `}
           render={data => {
-            const links = data.site.siteMetadata.menuLinks
+            const links = data.site.siteMetadata.navbarLinks
 
             return links.map(link => {
-              if (link.name === "Gatsby NYC") {
+              if (link.id === 1) {
                 return
               }
               return (
-                <MenuItems key={link.name}>
+                <NavbarItems key={link.id}>
                   <Link to={link.link}>
-                    {link.name === "Join Our Slack" ? (
-                      <SlackButton>{link.name}</SlackButton>
+                    {link.id === 3 ? (
+                      <Button
+                        aria-label="Join our Slack channel."
+                        type="submit"
+                      >
+                        {link.name}
+                      </Button>
                     ) : (
                       link.name
                     )}
                   </Link>
-                </MenuItems>
+                </NavbarItems>
               )
             })
           }}
         />
-      </MenuItemContainer>
+      </NavbarItemContainer>
     </NavContainer>
   </HeaderContainer>
 )
