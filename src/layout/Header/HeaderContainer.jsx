@@ -15,6 +15,7 @@ const InnerContainer = styled.div`
   margin: 0 auto;
   max-width: ${props => props.theme.sizes.maxContentWidth};
   padding: 1.45rem 1.0875rem;
+  // display: none; //remove this for production
 `
 
 HeaderContainer.propTypes = {
