@@ -1,34 +1,15 @@
 import React from "react"
 import GatsbyLogo from "../../components/GatsbyLogo"
 import { Link } from "../../components/common"
-import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 
-import Button from "../../components/Button"
-
-const NavContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-
-const LogoContainer = styled.div`
-  width: 120px;
-`
-
-const NavbarItemContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`
-
-const NavbarItems = styled.div`
-  margin: auto 1rem;
-
-  &:last-child {
-    margin-right: 0;
-  }
-`
+import {
+  Button,
+  LogoContainer,
+  NavContainer,
+  NavbarItemContainer,
+  NavbarItems,
+} from "../../components/style"
 
 const NavBar = (
   <NavContainer>
