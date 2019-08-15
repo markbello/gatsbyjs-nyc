@@ -1,8 +1,13 @@
 import React, { useState } from "react"
 import Layout from "../layout"
-import "./slack.css"
 
 import SEO from "../components/seo"
+import {
+  Button,
+  SlackFormContainer,
+  EmailInput,
+  Toast,
+} from "../components/style"
 
 export default function Slack() {
   const [email, setEmail] = useState("")
@@ -13,16 +18,15 @@ export default function Slack() {
     setTimeout(() => setEmail(""), 1000)
   }
 
+  console.log(email)
   return (
     <Layout>
       <SEO title="Gatsby NYC's Slack Community" />
       {submitToast && (
-        <div id="toast" onClick={() => setSubmitToast(false)}>
-          Invite sent!
-        </div>
+        <Toast onClick={() => setSubmitToast(false)}>Invite sent!</Toast>
       )}
-      <div id="slack-form">
-        <h1 style={{ textAlign: "center" }}>Gatsby NYC's Slack Community</h1>
+      <SlackFormContainer>
+        <h1>Gatsby NYC's Slack Community</h1>
         <p>
           Our community is a welcoming space where any Gatsby, React,
           Javascript, JAMStack related question is fair game, be it beginner,
@@ -35,7 +39,7 @@ export default function Slack() {
           target="_blank"
           onSubmit={requestInvite}
         >
-          <input
+          <EmailInput
             aria-label="Enter your email to be invited to Gatsy NYC's Slack channel."
             required
             autoComplete="email"
@@ -45,11 +49,11 @@ export default function Slack() {
             value={email}
             onChange={({ target: { value } }) => setEmail(value)}
           />
-          <button aria-label="Submit your email." type="submit">
+          <Button aria-label="Submit your email." type="submit">
             Invite Me!
-          </button>
+          </Button>
         </form>
-      </div>
+      </SlackFormContainer>
     </Layout>
   )
 }
