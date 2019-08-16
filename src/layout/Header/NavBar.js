@@ -14,18 +14,9 @@ import {
 
 export default function NavBar() {
   const [menu, setMenu] = useState(false)
-  const openMenu = () => {
-    document.getElementsByTagName("body")[0].style =
-      "width: 100%; height: 100%; position: fixed"
-  }
 
-  const closeMenu = () => {
-    document.getElementsByTagName("body")[0].style =
-      "width: auto; height: auto; position: auto"
-  }
   return (
     <NavContainer>
-      {menu ? openMenu() : closeMenu()}
       <Link to="/">
         <LogoContainer>
           <GatsbyLogo />
