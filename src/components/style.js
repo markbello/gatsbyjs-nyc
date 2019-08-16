@@ -89,7 +89,9 @@ export const MenuIconContainer = styled.div`
   display: none;
   margin-left: auto;
   z-index: 9999;
-  position: relative;
+  position: ${props => props.fixAbsolutePosition};
+  right: 0;
+  margin-right: 1.0875rem;
 
   .bar {
     ${bar}

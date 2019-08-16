@@ -7,6 +7,7 @@ export default function ToggleButton(props) {
     <MenuIconContainer
       backgroundColor={!!props.menu ? "#fff" : "rebeccapurple"}
       displayMenu={!!props.menu ? "fixed" : "block"}
+      fixAbsolutePosition={!!props.menu ? "fixed" : "absolute"}
     >
       <div onClick={() => props.setMenu(!props.menu)}>
         <div className={!!props.menu ? "bar change-bar1" : "bar"}></div>
