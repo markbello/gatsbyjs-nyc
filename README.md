@@ -5,12 +5,14 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Gatsby NYC Meetup
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+The open source website for the Gatsby NYC Meetup. The site is built from [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default). We welcome contributions from any and all!
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+Want to start your own Gatsby project? Here are the intructions to kick off your project with the same default boilerplate. It ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+
+_Have another more specific idea? You may want to check out the vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
 ## 🚀 Quick start
 
