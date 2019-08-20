@@ -133,6 +133,14 @@ export const NavbarItemContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  a {
+    margin: auto 1rem;
+    &:last-child {
+      ${button},
+      margin-right: 0;
+    }
+  }
   @media (max-width: 768px) {
     display: ${props => props.mobileDisplay};
     position: fixed;
@@ -145,29 +153,19 @@ export const NavbarItemContainer = styled.div`
     flex-direction: column;
     a {
       color: #fff;
-    }
-  }
-`
-
-export const NavbarItems = styled.div`
-  margin: auto 1rem;
-  &:last-child {
-    ${button},
-    margin-right: 0;
-  }
-  @media (max-width: 768px) {
-    margin: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    &: first-child {
-      margin-top: 80px;
-    }
-    &: last-child {
+      margin: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 1rem;
-      ${removeButton}
+      &: first-child {
+        margin-top: 80px;
+      }
+      &: last-child {
+        padding: 1rem;
+        ${removeButton}
+      }
     }
   }
 `
