@@ -16,9 +16,14 @@ module.exports = {
       },
       {
         id: 3,
+        name: `Blog`,
+        link: `/blog`
+      },
+      {
+        id: 4,
         name: `Join Our Slack`,
         link: `/slack`
-      }
+      },
     ]
   },
   plugins: [
