@@ -45,11 +45,13 @@ export default function NavBar() {
                 return null
               }
               return (
-                <NavbarItems key={link.id} onClick={() => setMenu(false)}>
-                  <Link to={link.link}>
-                    {link.id === 1 ? "Home" : link.name}
-                  </Link>
-                </NavbarItems>
+                <Link
+                  to={link.link}
+                  key={link.id}
+                  onClick={() => setMenu(false)}
+                >
+                  {link.id === 1 ? "Home" : link.name}
+                </Link>
               )
             })
           }}
