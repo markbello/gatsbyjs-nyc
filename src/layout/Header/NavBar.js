@@ -9,7 +9,6 @@ import {
   LogoContainer,
   NavContainer,
   NavbarItemContainer,
-  NavbarItems,
 } from "../../components/style"
 
 export default function NavBar() {
